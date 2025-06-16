@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEADERBOARD TRYOUT OSNK 2025 AKADEMI PEMULA</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Loading Indicator -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="container">
+    <header class="main-header">
+      <h1>Leaderboard Tryout OSNK 2025 Akademi Pemula 🚀</h1>
+      <div class="header-controls">
+        <select id="subject" class="subject-select">
+          <option>Matematika</option>
+          <option>Fisika</option>
+          <option>Kimia</option>
+          <option>Informatika</option>
+          <option>Biologi</option>
+          <option>Astronomi</option>
+          <option>Ekonomi</option>
+          <option>Kebumian</option>
+          <option>Geografi</option>
+        </select>
+        <input type="text" id="search" class="search-input" placeholder="Cari nama...">
+        <button id="themeToggle" class="theme-toggle">🌓</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="podium" id="podium"></section>
+      <section class="others">
+        <ul id="othersList"></ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Musik Background -->
+  <audio id="bgMusic" src="music.mp3" autoplay loop></audio>
+  <button id="musicToggle" class="music-toggle">🔊</button>
+
+  <!-- Script -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Loading Hide After Load -->
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
+  </script>
+
+  <!-- Music Toggle -->
+  <script>
+    const bgMusic = document.getElementById('bgMusic');
+    const musicToggle = document.getElementById('musicToggle');
+
+    musicToggle.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        musicToggle.textContent = '🔊';
+      } else {
+        bgMusic.pause();
+        musicToggle.textContent = '🔇';
+      }
+    });
+  </script>
+
+</body>
+</html>
